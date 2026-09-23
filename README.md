@@ -5,7 +5,8 @@ marketing website
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noel Service | We Grow Brands</title>
+
+  <title>Noel Service | Online Store</title>
 
   <style>
     * {
@@ -16,29 +17,43 @@ marketing website
 
     body {
       font-family: Arial, sans-serif;
-      background: #f5f7fa;
+      background: #f5f5f5;
       color: #222;
-      line-height: 1.6;
     }
 
     header {
       background: #111;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 18px 20px;
     }
 
-    header h1 {
-      font-size: 30px;
+    .header-top {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
 
-    header p {
-      margin-top: 5px;
-      color: #ccc;
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .cart {
+      background: white;
+      color: #111;
+      padding: 9px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     nav {
-      margin-top: 15px;
+      max-width: 1200px;
+      margin: 18px auto 0;
+      text-align: center;
     }
 
     nav a {
@@ -48,83 +63,136 @@ marketing website
     }
 
     .hero {
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
       background: white;
+      text-align: center;
+      padding: 70px 20px;
     }
 
-    .hero h2 {
-      font-size: 48px;
+    .hero h1 {
+      font-size: 45px;
       margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 20px;
+      font-size: 19px;
       color: #666;
       margin-bottom: 25px;
     }
 
-    .button {
+    .shop-button {
       display: inline-block;
       background: #111;
       color: white;
+      text-decoration: none;
       padding: 14px 25px;
       border-radius: 6px;
-      text-decoration: none;
     }
 
     .section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
-      text-align: center;
+      padding: 50px 20px;
     }
 
     .section h2 {
-      font-size: 32px;
+      text-align: center;
       margin-bottom: 30px;
+      font-size: 30px;
     }
 
-    .services {
+    .categories {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
     }
 
-    .card {
+    .category {
       background: white;
-      padding: 30px 20px;
+      padding: 25px 15px;
+      text-align: center;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: #222;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
     }
 
-    .card h3 {
+    .category-icon {
+      font-size: 35px;
       margin-bottom: 10px;
     }
 
-    .contact {
-      background: #111;
-      color: white;
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
     }
 
-    .contact p {
-      margin: 10px 0;
+    .product {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .product-image {
+      height: 190px;
+      background: #e9e9e9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-info h3 {
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 19px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .buy-button {
+      display: block;
+      text-align: center;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 11px;
+      border-radius: 5px;
+    }
+
+    .about {
+      background: white;
+      text-align: center;
+      border-radius: 10px;
     }
 
     footer {
-      background: #000;
-      color: #aaa;
+      background: #111;
+      color: white;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      margin: 7px 0;
+      color: #ccc;
     }
 
     @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 36px;
+      .header-top {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 35px;
       }
 
       nav a {
@@ -138,70 +206,224 @@ marketing website
 <body>
 
   <header>
-    <h1>Noel Service</h1>
-    <p>We Grow Brands</p>
+
+    <div class="header-top">
+      <div class="logo">Noel Service</div>
+
+      <a href="#" class="cart">
+        🛒 Cart
+      </a>
+    </div>
 
     <nav>
       <a href="#home">Home</a>
-      <a href="#services">Services</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
     </nav>
+
   </header>
 
+
   <section class="hero" id="home">
-    <div>
-      <h2>We Grow Brands</h2>
-      <p>Helping businesses get noticed, connect with customers and grow online.</p>
-      <a href="#contact" class="button">Work With Us</a>
-    </div>
+
+    <h1>Shop Everything You Love</h1>
+
+    <p>
+      Fashion, electronics, phones, shoes, watches, home appliances and more.
+    </p>
+
+    <a href="#products" class="shop-button">
+      Shop Now
+    </a>
+
   </section>
 
-  <section class="section" id="services">
-    <h2>Our Services</h2>
 
-    <div class="services">
+  <section class="section" id="categories">
 
-      <div class="card">
-        <h3>Social Media Marketing</h3>
-        <p>We help businesses build their presence and reach more people online.</p>
+    <h2>Shop By Category</h2>
+
+    <div class="categories">
+
+      <a href="#" class="category">
+        <div class="category-icon">👕</div>
+        <h3>Clothing</h3>
+      </a>
+
+      <a href="#" class="category">
+        <div class="category-icon">👟</div>
+        <h3>Shoes</h3>
+      </a>
+
+      <a href="#" class="category">
+        <div class="category-icon">📱</div>
+        <h3>Phones</h3>
+      </a>
+
+      <a href="#" class="category">
+        <div class="category-icon">⌚</div>
+        <h3>Watches</h3>
+      </a>
+
+      <a href="#" class="category">
+        <div class="category-icon">🏠</div>
+        <h3>Home Appliances</h3>
+      </a>
+
+      <a href="#" class="category">
+        <div class="category-icon">🛍️</div>
+        <h3>Other Products</h3>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section class="section" id="products">
+
+    <h2>Featured Products</h2>
+
+    <div class="products">
+
+      <div class="product">
+
+        <div class="product-image">
+          👕
+        </div>
+
+        <div class="product-info">
+          <h3>Fashion Clothing</h3>
+          <p class="price">₦25,000</p>
+
+          <a href="#" class="buy-button">
+            View Product
+          </a>
+        </div>
+
       </div>
 
-      <div class="card">
-        <h3>Content Creation</h3>
-        <p>We create engaging content that helps brands communicate with their audience.</p>
+
+      <div class="product">
+
+        <div class="product-image">
+          👟
+        </div>
+
+        <div class="product-info">
+          <h3>Fashion Shoes</h3>
+          <p class="price">₦35,000</p>
+
+          <a href="#" class="buy-button">
+            View Product
+          </a>
+        </div>
+
       </div>
 
-      <div class="card">
-        <h3>Brand Promotion</h3>
-        <p>We promote businesses and products to help them reach potential customers.</p>
+
+      <div class="product">
+
+        <div class="product-image">
+          📱
+        </div>
+
+        <div class="product-info">
+          <h3>Smartphone</h3>
+          <p class="price">₦250,000</p>
+
+          <a href="#" class="buy-button">
+            View Product
+          </a>
+        </div>
+
       </div>
 
-      <div class="card">
-        <h3>Digital Marketing</h3>
-        <p>We develop simple digital strategies designed to help businesses grow.</p>
+
+      <div class="product">
+
+        <div class="product-image">
+          ⌚
+        </div>
+
+        <div class="product-info">
+          <h3>Smart Watch</h3>
+          <p class="price">₦45,000</p>
+
+          <a href="#" class="buy-button">
+            View Product
+          </a>
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          🏠
+        </div>
+
+        <div class="product-info">
+          <h3>Home Appliance</h3>
+          <p class="price">₦80,000</p>
+
+          <a href="#" class="buy-button">
+            View Product
+          </a>
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          🎧
+        </div>
+
+        <div class="product-info">
+          <h3>Wireless Headphones</h3>
+          <p class="price">₦30,000</p>
+
+          <a href="#" class="buy-button">
+            View Product
+          </a>
+        </div>
+
       </div>
 
     </div>
+
   </section>
+
 
   <section class="section" id="about">
-    <h2>About Noel Service</h2>
-    <p>
-      Noel Service is a marketing service focused on helping businesses
-      build their brands, reach more customers and grow their online presence.
-    </p>
+
+    <div class="about">
+
+      <h2>About Noel Service</h2>
+
+      <p>
+        Noel Service is an online shopping platform where customers can
+        discover a variety of products including fashion, footwear,
+        electronics, phones, watches, home appliances and more.
+      </p>
+
+    </div>
+
   </section>
 
-  <section class="section contact" id="contact">
-    <h2>Let's Work Together</h2>
-    <p>Ready to grow your brand?</p>
-    <p>Email: noelservice@example.com</p>
-    <a href="mailto:noelservice@example.com" class="button">Contact Us</a>
-  </section>
 
   <footer>
-    <p>&copy; 2026 Noel Service. All rights reserved.</p>
+
+    <h3>Noel Service</h3>
+
+    <p>Everything you need, in one place.</p>
+
+    <p>© 2026 Noel Service. All rights reserved.</p>
+
   </footer>
 
 </body>
